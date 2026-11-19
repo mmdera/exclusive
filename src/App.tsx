@@ -56,13 +56,52 @@ const cinemaFilms = [
 
 const jailer2Film = {
   slug: 'jailer-2', title: 'JAILER 2', tag: 'GRAND RELEASE', image: './images/jailer2-poster.webp', note: '2026',
-  genre: 'CRIME · ACTION · DRAMA · DARK COMEDY', year: '2026', release: '2026 · Date to be confirmed', language: 'Tamil + 3 languages', format: '2D · IMAX', runtime: '2h 43m', certificate: '16+', status: 'COMING SOON',
+  genre: 'CRIME · ACTION · DRAMA · DARK COMEDY', year: '2026', release: '15 October 2026', language: 'Tamil, Telugu, Hindi, Malayalam, Kannada', format: '2D · IMAX', runtime: '2h 45m', certificate: 'UA16+', status: 'NOW STREAMING',
   synopsis: 'Jailer 2 follows retired jailer Tiger Muthuvel Pandian as he tries to lead a quiet life while secretly working against an idol-smuggling network. His plans are disrupted when criminal Dileep and syndicate leader Bodhi Kalpak begin searching for the person responsible for their former leader’s death. As the threats grow, Muthuvel must protect his family and take on the criminal network once again.',
   cast: ['Rajinikanth as Muthuvel “Tiger” Pandian', 'S. J. Suryah as Bodhi Kalpak', 'Mithun Chakraborty as Champaklal Chaubey', 'Suraj Venjaramoodu as Dileep', 'Ramya Krishnan as Vijayalakshmi “Viji” Pandian', 'Vidya Balan as Kantha'],
   crew: ['Nelson Dilipkumar — Director', 'Anirudh Ravichander — Music', 'Sun Pictures — Production'],
-  bookMyShow: '', tagLine: 'THE TIGER RETURNS.', trailerId: 'PWuJ5-WiEgY', trailerLabel: 'OFFICIAL HINDI TRAILER · SUN PICTURES'
+  bookMyShow: 'https://www.district.in/movies/jailer-2-movie-tickets-MV187766', tagLine: 'THE TIGER RETURNS.', trailerId: 'ugzPkXEqff4', trailerLabel: 'OFFICIAL DATE ANNOUNCEMENT TEASER · SUN PICTURES', streamingPlatform: 'PRIME VIDEO', streamingUrl: 'https://www.primevideo.com/'
 }
-const allFilms = [...cinemaFilms, jailer2Film]
+const blockbusterFilms = [
+  jailer2Film,
+  {
+    slug: 'dhurandhar-the-revenge', title: 'DHURANDHAR: THE REVENGE', tag: 'BLOCKBUSTER · STREAMING', image: './images/dhurandhar-revenge-poster.png', note: '19 MARCH 2026',
+    genre: 'ACTION · CRIME · THRILLER', year: '2026', release: '19 March 2026', language: 'Hindi, Tamil, Telugu, Malayalam, Kannada', format: '2D · IMAX 2D · Dolby Cinema 2D', runtime: '3h 49m', certificate: 'A', status: 'NOW STREAMING',
+    synopsis: 'Dhurandhar The Revenge introduces Jaskirat Singh Rangi, tracing the chain of events that compel him to become Hamza Ali Mazari, and follows his rise as he operates deep inside Pakistan. The spy-action thriller follows Hamza through a volatile world of gang warfare, institutional corruption and dangerous enemies.',
+    cast: ['Ranveer Singh as Hamza Ali Mazari / Jaskirat Singh Rangi', 'Sanjay Dutt as SP Chaudhary Aslam', 'R. Madhavan as Ajay Sanyal', 'Arjun Rampal as Major Iqbal', 'Sara Arjun as Yalina Jamali', 'Rakesh Bedi as Jameel Jamali', 'Danish Pandor', 'Gaurav Gera'],
+    crew: ['Aditya Dhar — Writer, Director & Producer', 'Jyoti Deshpande — Producer', 'Lokesh Dhar — Producer', 'Shashwat Sachdev — Music', 'Vikash Nowlakha — Cinematography', 'Shivkumar V. Panicker — Editor', 'Jio Studios — Studio', 'B62 Studios — Production House'],
+    bookMyShow: 'https://in.bookmyshow.com/explore/movies', tagLine: 'THE STORY BEHIND THE LEGEND.', trailerId: 'Pb2KJlBGids', trailerLabel: 'OFFICIAL TRAILER · JIO STUDIOS',
+    streamingPlatform: 'JIOHOTSTAR', streamingUrl: 'https://www.hotstar.com/in'
+  },
+  {
+    slug: 'spider-man-brand-new-day', title: 'SPIDER-MAN: BRAND NEW DAY', tag: 'MARVEL · DIGITAL', image: './images/spiderman-brand-new-day-poster.png', note: '30 JULY 2026',
+    genre: 'ACTION · ADVENTURE · SCI-FI', year: '2026', release: '30 July 2026', language: 'English, Hindi, Tamil, Telugu', format: '2D · 3D · IMAX', runtime: '2h 25m', certificate: 'UA13+', status: 'NOW ON DIGITAL',
+    synopsis: 'It’s a BRAND NEW DAY for Peter Parker. Fighting crime full-time as Spider-Man in a world that doesn’t remember him — and the pressure of seeing his old friends move on without him — sparks a change in Peter that he may not have the power to control. That transformation might also be the only thing that can stop a shocking new threat to the city and those he loves.',
+    cast: ['Tom Holland as Peter Parker / Spider-Man', 'Zendaya as MJ', 'Sadie Sink', 'Jacob Batalon as Ned Leeds', 'Jon Bernthal as Frank Castle / Punisher', 'Mark Ruffalo as Bruce Banner / Hulk', 'Tramell Tillman', 'Michael Mando'],
+    crew: ['Destin Daniel Cretton — Director', 'Chris McKenna — Writer', 'Erik Sommers — Writer', 'Kevin Feige — Producer', 'Amy Pascal — Producer', 'Avi Arad — Producer'],
+    bookMyShow: 'https://in.bookmyshow.com/explore/movies', tagLine: 'THE WORLD FORGOT HIM. HE NEVER FORGOT.', trailerId: '62bIsvRcPv0', trailerLabel: 'OFFICIAL TRAILER · SONY PICTURES',
+    streamingPlatform: 'DIGITAL · PRIME VIDEO / APPLE TV', streamingUrl: 'https://www.sonypictures.com/movies/spidermanbrandnewday'
+  },
+  {
+    slug: 'scene', title: 'SCENE', tag: 'IN CINEMAS', image: './images/scene-poster.png', note: '6 NOVEMBER 2026',
+    genre: 'ACTION · COMEDY · CRIME · DRAMA', year: '2026', release: '6 November 2026', language: 'Tamil, Telugu, Malayalam', format: '2D · EPIQ · HDR by Barco · Dolby Cinema 2D', runtime: '2h 29m', certificate: 'UA16+', status: 'IN CINEMAS',
+    synopsis: 'Inbaraj, a police officer, is forced to reopen a case he left unfinished years ago. This time, he must solve it with a chaotic and troublesome team. As they struggle to work together and deal with the twists and turns of the case, the investigation takes them on a chaotic and unpredictable ride.',
+    cast: ['Suriya Sivakumar as Inbaraj', 'Nazriya Nazim as Maya', 'Naslen as Eeswaran', 'Anandaraj as Irudhayaraj', 'Lal', 'Raj Priyan'],
+    crew: ['Jithu Madhavan — Writer & Director', 'Jyotika — Producer', 'Suriya — Producer', 'Sushin Shyam — Music', 'Vineeth Augustian — Cinematography', 'Ajmal Sabu — Editor', '2D Entertainment — Production', 'Zhagaram Studios — Production'],
+    bookMyShow: 'https://in.bookmyshow.com/explore/movies', tagLine: 'ONE CASE. ONE CHAOTIC TEAM.', trailerId: 'LM4ByXufv2w', trailerLabel: 'OFFICIAL TRAILER · SONY MUSIC SOUTH',
+    streamingPlatform: 'NETFLIX · EXPECTED 4 DECEMBER', streamingUrl: 'https://www.netflix.com/in/'
+  },
+  {
+    slug: 'drishyam-the-conclusion', title: 'DRISHYAM: THE CONCLUSION', tag: 'THE FINAL CHAPTER', image: './images/drishyam-conclusion-poster.png', note: '2 OCTOBER 2026',
+    genre: 'DRAMA · MYSTERY · THRILLER · CRIME', year: '2026', release: '2 October 2026', language: 'Hindi', format: '2D · IMAX 2D · EPIQ · Dolby Cinema 2D', runtime: '2h 28m', certificate: 'UA', status: 'COMING TO OTT',
+    synopsis: 'Years after outsmarting the police, Vijay Salgaonkar and his family are once again caught in a tense battle to protect their carefully guarded secret. When Meera Deshmukh continues searching for answers about her missing son, the investigation takes a fresh turn with the involvement of a new Crime Branch officer. As new evidence threatens to unravel Vijay’s carefully constructed alibi, he must stay ahead of the law and protect his family.',
+    cast: ['Ajay Devgn as Vijay Salgaonkar', 'Tabu as Meera Deshmukh', 'Shriya Saran as Nandini Salgaonkar', 'Ishita Dutta as Anju Salgaonkar', 'Jaideep Ahlawat as SP Rajveer Singh Tomar', 'Prakash Raj as Public Prosecutor Indrajith Shetty', 'Rajat Kapoor', 'Mrunal Jadhav'],
+    crew: ['Abhishek Pathak — Director', 'Kumar Mangat Pathak — Producer', 'Ajit Andhare — Producer', 'Alok Jain — Producer', 'Aamil Keeyan Khan — Writer', 'Ravi Basrur — Music'],
+    bookMyShow: 'https://in.bookmyshow.com/explore/movies', tagLine: 'EVERY SCENE HIDES A SECRET.', trailerId: 'fneuVQ7uO_w', trailerLabel: 'OFFICIAL TRAILER · STAR STUDIOS',
+    streamingPlatform: 'NETFLIX · 27 NOVEMBER', streamingUrl: 'https://www.netflix.com/in/'
+  }
+]
+const allFilms = [...cinemaFilms, ...blockbusterFilms]
 // Keep every movie listing in ascending release-date order. Titles without a
 // confirmed calendar date (currently Jailer 2) are placed after dated films.
 const getReleaseTimestamp = (film: typeof allFilms[number]) => {
@@ -72,48 +111,12 @@ const getReleaseTimestamp = (film: typeof allFilms[number]) => {
   return Number.isNaN(timestamp) ? Number.POSITIVE_INFINITY : timestamp
 }
 const filmsByReleaseDate = [...allFilms].sort((a, b) => getReleaseTimestamp(a) - getReleaseTimestamp(b) || a.title.localeCompare(b.title))
-const heroFilms = filmsByReleaseDate.filter(film => film.slug !== 'yeh-prem-mol-liya')
-const universeFilms = filmsByReleaseDate.filter(film => film.slug !== 'jailer-2')
+const heroFilms = [...cinemaFilms, jailer2Film].filter(film => film.slug !== 'yeh-prem-mol-liya')
+const universeFilms = cinemaFilms
 const posterWall = [...heroFilms, ...heroFilms]
 
 
 
-function PrecisionCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
-    if (!finePointer.matches) return
-    const cursor = cursorRef.current
-    if (!cursor) return
-    let visible = false
-    // Track the native pointer directly: no easing, interpolation or RAF queue.
-    // This keeps the custom cursor locked to the hardware pointer at full speed.
-    const move = (event: PointerEvent) => {
-      if (!visible) { cursor.classList.add('cursor-visible'); visible = true }
-      cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`
-    }
-    const over = (event: PointerEvent) => {
-      const target = event.target as HTMLElement | null
-      cursor.classList.toggle('cursor-hover', !!target?.closest('a, button, [role="button"], input, textarea, select, summary, .moving-poster, .universe-film-card, .blockbuster-card'))
-    }
-    const down = () => cursor.classList.add('cursor-press')
-    const up = () => cursor.classList.remove('cursor-press')
-    const leave = () => { cursor.classList.remove('cursor-visible', 'cursor-hover'); visible = false }
-    window.addEventListener('pointermove', move, { passive: true })
-    document.addEventListener('pointerover', over, { passive: true })
-    window.addEventListener('pointerdown', down, { passive: true })
-    window.addEventListener('pointerup', up, { passive: true })
-    document.addEventListener('pointerleave', leave)
-    return () => {
-      window.removeEventListener('pointermove', move)
-      document.removeEventListener('pointerover', over)
-      window.removeEventListener('pointerdown', down)
-      window.removeEventListener('pointerup', up)
-      document.removeEventListener('pointerleave', leave)
-    }
-  }, [])
-  return <div ref={cursorRef} className="precision-cursor" aria-hidden="true"><span className="cursor-halo"/><span className="cursor-core"/><svg className="cursor-pointer" viewBox="0 0 18 22" aria-hidden="true"><path d="M2 1.5v16.2l4.25-4.05 3.15 6.6 3.15-1.48-3.2-6.55 5.85-.25L2 1.5Z" fill="#f4fbff" stroke="#07101d" strokeWidth="1.15" strokeLinejoin="round"/></svg><span className="cursor-glint"/></div>
-}
 
 function App() {
   const root = useRef<HTMLDivElement>(null)
@@ -154,7 +157,6 @@ function App() {
   const submit = (e: React.FormEvent) => { e.preventDefault(); if (email.includes('@')) setSubscribed(true) }
   const closeMenu = () => setMenuOpen(false)
   return <div ref={root} className="site-shell">
-    <PrecisionCursor />
     <div className="grain" /><canvas ref={canvas} className="atmosphere" />
     <header className="topbar"><a href="#home" className="wordmark" onClick={closeMenu} aria-label="MMD Exclusive home"><span className="mmd-logo" aria-hidden="true">MMD</span><span className="wordmark-divider"/><span className="wordmark-name">EXCLUSIVE</span></a><nav className={menuOpen ? 'nav open' : 'nav'}><a href="#universe" onClick={closeMenu}>THE UNIVERSE</a><a href="#universe-films" onClick={closeMenu}>FILMS</a><a href="#blockbusters" onClick={closeMenu}>BLOCKBUSTERS</a><a href="#about" onClick={closeMenu}>OUR WORLD</a><a href="#contact" onClick={closeMenu}>CONTACT</a></nav><a className="top-cta" href="#universe-films">ENTER THE WORLD <ArrowUpRight size={14}/></a><button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button></header>
     <main>
@@ -188,6 +190,9 @@ function App() {
                   <a className="booking-button booking-button-district" href="https://www.district.in/movies/" target="_blank" rel="noopener noreferrer" aria-label={`Find ${activeFilm.title} tickets on District`}>
                     <Ticket size={16}/><span>BOOK ON DISTRICT</span><ArrowUpRight size={15}/>
                   </a>
+                  {'streamingPlatform' in activeFilm && activeFilm.streamingPlatform && <a className="booking-button booking-button-ott" href={activeFilm.streamingUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${activeFilm.title} on ${activeFilm.streamingPlatform}`}>
+                    <Play size={15}/><span>{activeFilm.streamingPlatform}</span><ArrowUpRight size={15}/>
+                  </a>}
                   <a className="film-back-link" href="#home">EXPLORE MORE FILMS</a>
                 </div>
               </div>
@@ -233,14 +238,10 @@ function App() {
         <div className="section-label reveal"><span>02 — BLOCKBUSTERS</span><span>THE BIGGEST STORIES. THE BIGGEST SCREEN.</span></div>
         <div className="blockbusters-heading reveal"><span className="blockbusters-kicker">THE NEXT WAVE OF CINEMA</span><h2>A WORLD<br/><em>OF BLOCKBUSTERS.</em></h2></div>
         <div className="blockbuster-rail reveal" aria-label="MMD Exclusive blockbusters">
-          <a className="blockbuster-card blockbuster-featured" href={`#/film/${jailer2Film.slug}`} aria-label="Open Jailer 2 film page">
-            <div className="blockbuster-poster"><img src={jailer2Film.image} alt="Jailer 2 official poster" loading="lazy" decoding="async"/><span className="blockbuster-count">01 / 05</span><span className="blockbuster-open"><ArrowUpRight size={20}/></span><span className="blockbuster-status">FEATURED BLOCKBUSTER</span></div>
-            <div className="blockbuster-card-info"><span>CRIME · ACTION · DRAMA</span><h3>JAILER 2</h3><p>THE TIGER RETURNS. <b>2026</b></p></div>
-          </a>
-          {[2,3,4,5].map((number) => <article className="blockbuster-card blockbuster-placeholder" key={number}>
-            <div className="blockbuster-poster placeholder-poster"><div className="placeholder-orbit orbit-a"/><div className="placeholder-orbit orbit-b"/><span className="placeholder-number">0{number}</span><span className="placeholder-plus">+</span><span className="placeholder-caption">NEXT<br/>FEATURE</span><span className="blockbuster-count">0{number} / 05</span></div>
-            <div className="blockbuster-card-info"><span>COMING INTO FOCUS</span><h3>YOUR NEXT FILM</h3><p>ANNOUNCEMENT SOON <b>—</b></p></div>
-          </article>)}
+          {blockbusterFilms.map((film, index) => <a className={`blockbuster-card ${index === 0 ? 'blockbuster-featured' : ''}`} href={`#/film/${film.slug}`} key={film.slug} aria-label={`Open ${film.title} film page`}>
+            <div className="blockbuster-poster"><img src={film.image} alt={`${film.title} official poster`} loading="lazy" decoding="async"/><span className="blockbuster-count">0{index + 1} / 05</span><span className="blockbuster-open"><ArrowUpRight size={20}/></span>{index === 0 && <span className="blockbuster-status">FEATURED BLOCKBUSTER</span>}</div>
+            <div className="blockbuster-card-info"><span>{film.genre}</span><h3>{film.title}</h3><p>{film.note} <b>{film.year}</b></p></div>
+          </a>)}
         </div>
         <div className="blockbusters-foot reveal"><span>MORE TITLES. MORE WORLDS.</span><i/><span>STAY TUNED <ArrowUpRight size={13}/></span></div>
       </section>
