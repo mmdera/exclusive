@@ -5,8 +5,33 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { createAtmosphere } from './components/Atmosphere'
 gsap.registerPlugin(ScrollTrigger)
 
+type Film = {
+  slug: string
+  title: string
+  tag: string
+  image: string
+  note: string
+  genre: string
+  year: string
+  release: string
+  language: string
+  format: string
+  runtime: string
+  certificate: string
+  status: string
+  synopsis: string
+  cast: string[]
+  crew: string[]
+  bookMyShow: string
+  tagLine: string
+  trailerId: string
+  trailerLabel: string
+  streamingPlatform?: string
+  streamingUrl?: string
+}
+
 const topics = ['Film & cinema', 'Behind the scenes', 'Pop culture', 'Interviews', 'Stories worth sharing']
-const cinemaFilms = [
+const cinemaFilms: Film[] = [
   {
     slug: 'king', title: 'KING', tag: 'UPCOMING RELEASE', image: './images/king-poster.webp', note: '24 DECEMBER 2026',
     genre: 'ACTION · THRILLER', year: '2026', release: '24 December 2026', language: 'Hindi', format: '2D', runtime: 'Not announced', certificate: 'Not announced', status: 'COMING SOON',
@@ -54,7 +79,7 @@ const cinemaFilms = [
   },
 ]
 
-const jailer2Film = {
+const jailer2Film: Film = {
   slug: 'jailer-2', title: 'JAILER 2', tag: 'GRAND RELEASE', image: './images/jailer2-poster.webp', note: '2026',
   genre: 'CRIME · ACTION · DRAMA · DARK COMEDY', year: '2026', release: '15 October 2026', language: 'Tamil, Telugu, Hindi, Malayalam, Kannada', format: '2D · IMAX', runtime: '2h 45m', certificate: 'UA16+', status: 'NOW STREAMING',
   synopsis: 'Jailer 2 follows retired jailer Tiger Muthuvel Pandian as he tries to lead a quiet life while secretly working against an idol-smuggling network. His plans are disrupted when criminal Dileep and syndicate leader Bodhi Kalpak begin searching for the person responsible for their former leader’s death. As the threats grow, Muthuvel must protect his family and take on the criminal network once again.',
@@ -62,7 +87,7 @@ const jailer2Film = {
   crew: ['Nelson Dilipkumar — Director', 'Anirudh Ravichander — Music', 'Sun Pictures — Production'],
   bookMyShow: 'https://www.district.in/movies/jailer-2-movie-tickets-MV187766', tagLine: 'THE TIGER RETURNS.', trailerId: 'ugzPkXEqff4', trailerLabel: 'OFFICIAL DATE ANNOUNCEMENT TEASER · SUN PICTURES', streamingPlatform: 'PRIME VIDEO', streamingUrl: 'https://www.primevideo.com/'
 }
-const blockbusterFilms = [
+const blockbusterFilms: Film[] = [
   jailer2Film,
   {
     slug: 'dhurandhar-the-revenge', title: 'DHURANDHAR: THE REVENGE', tag: 'BLOCKBUSTER · STREAMING', image: './images/dhurandhar-revenge-poster.png', note: '19 MARCH 2026',
@@ -101,10 +126,10 @@ const blockbusterFilms = [
     streamingPlatform: 'NETFLIX · 27 NOVEMBER', streamingUrl: 'https://www.netflix.com/in/'
   }
 ]
-const allFilms = [...cinemaFilms, ...blockbusterFilms]
+const allFilms: Film[] = [...cinemaFilms, ...blockbusterFilms]
 // Keep every movie listing in ascending release-date order. Titles without a
 // confirmed calendar date (currently Jailer 2) are placed after dated films.
-const getReleaseTimestamp = (film: typeof allFilms[number]) => {
+const getReleaseTimestamp = (film: Film) => {
   const match = film.release.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/)
   if (!match) return Number.POSITIVE_INFINITY
   const timestamp = Date.parse(`${match[2]} ${match[1]}, ${match[3]}`)
@@ -125,7 +150,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
   const [trailerOpen, setTrailerOpen] = useState(false)
-  const [activeFilm, setActiveFilm] = useState(() => allFilms.find(f => window.location.hash === `#/film/${f.slug}`) || null)
+  const [activeFilm, setActiveFilm] = useState<Film | null>(() => allFilms.find(f => window.location.hash === `#/film/${f.slug}`) || null)
   useEffect(() => {
     const syncRoute = () => { setActiveFilm(allFilms.find(f => window.location.hash === `#/film/${f.slug}`) || null); window.scrollTo(0, 0) }
     window.addEventListener('hashchange', syncRoute)
@@ -190,7 +215,7 @@ function App() {
                   <a className="booking-button booking-button-district" href="https://www.district.in/movies/" target="_blank" rel="noopener noreferrer" aria-label={`Find ${activeFilm.title} tickets on District`}>
                     <Ticket size={16}/><span>BOOK ON DISTRICT</span><ArrowUpRight size={15}/>
                   </a>
-                  {'streamingPlatform' in activeFilm && activeFilm.streamingPlatform && <a className="booking-button booking-button-ott" href={activeFilm.streamingUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${activeFilm.title} on ${activeFilm.streamingPlatform}`}>
+                  {activeFilm.streamingPlatform && activeFilm.streamingUrl && <a className="booking-button booking-button-ott" href={activeFilm.streamingUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${activeFilm.title} on ${activeFilm.streamingPlatform}`}>
                     <Play size={15}/><span>{activeFilm.streamingPlatform}</span><ArrowUpRight size={15}/>
                   </a>}
                   <a className="film-back-link" href="#home">EXPLORE MORE FILMS</a>
